@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Vehicle: MyString
+  type: 
+  name: MyString
+  serial_code: MyString
+  seats: 1
+
+two:
+  Vehicle: MyString
+  type: 
+  name: MyString
+  serial_code: MyString
+  seats: 1

@@ -1,0 +1,8 @@
+class HomeController < ApplicationController
+  def index
+		@users = User.all
+		if @users.nil?
+			render "users/new", :status => 302
+		end
+  end
+end
