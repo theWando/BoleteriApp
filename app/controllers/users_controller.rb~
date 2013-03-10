@@ -26,6 +26,11 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 		respond_to do |format|
+			puts %(=============== #{params[:flag]}===================)
+			if params[:flag] == "first_user"
+				puts 'admin==================='
+				@type = 'admin'
+			end
       format.html # new.html.erb
       format.json { render json: @user }
     end

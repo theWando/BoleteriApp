@@ -36,7 +36,7 @@
     <%= f.date_select :birth_date, {:start_year => Time.now.year, :end_year => Time.now.year-110, :prompt => true, :order => [:day, :month, :year], :default => Time.now} %>
   </div>
 	
-	<% if flash[:flag] %>
+	<% if params[:flag] %>
 		<%= hidden_field_tag(:type, "admin") %>
 	<% else %>
   <div class="field">

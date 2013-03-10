@@ -35,7 +35,7 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-
+		
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -55,7 +55,12 @@
         </div>
       </div>
     </div>
-
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>BoleteriApp</h1>
+    <p class="lead">Fundamental HTML elements styled and enhanced with extensible classes.</p>
+  </div>
+</header>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
