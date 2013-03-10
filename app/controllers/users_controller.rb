@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+	@type = ["employee","passanger"]
+
   # GET /users
   # GET /users.json
   def index
@@ -25,6 +28,11 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+		@users = User.find_all_by_type("admin")
+		if @users.empty?
+			@type = ["admin"]
+		end
+		puts "================ #{!@type.nil?}========="
 		respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -46,6 +54,10 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
+				@users = User.find_all_by_type("admin")
+				if @users.empty?
+					@type = ["admin"]
+				end
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

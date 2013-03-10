@@ -35,13 +35,9 @@
     <%= f.label 'Fecha de Nacimiento' %><br />
     <%= f.date_select :birth_date, {:start_year => Time.now.year, :end_year => Time.now.year-110, :prompt => true, :order => [:day, :month, :year], :default => Time.now} %>
   </div>
-	
-	<% if params[:flag] %>
-		<%= hidden_field_tag(:type, "admin") %>
-	<% else %>
   <div class="field">
     <%= f.label 'Tipo de Usuario' %><br />
-    <%= f.text_field :type %>
+    <%= f.select :type, @type %>
   </div>
   <% end %>
   <div class="actions">

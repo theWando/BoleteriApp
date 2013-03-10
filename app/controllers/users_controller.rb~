@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+	@type = ["employee","passanger"]
+
   # GET /users
   # GET /users.json
   def index
@@ -25,12 +28,12 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+		@users = User.find_all_by_type("admin")
+		if @users.empty?
+			@type = ["admin"]
+		end
+		puts "================ #{!@type.nil?}========="
 		respond_to do |format|
-			puts %(=============== #{params[:flag]}===================)
-			if params[:flag] == "first_user"
-				puts 'admin==================='
-				@type = 'admin'
-			end
       format.html # new.html.erb
       format.json { render json: @user }
     end
