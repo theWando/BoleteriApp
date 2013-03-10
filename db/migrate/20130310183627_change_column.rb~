@@ -1,0 +1,9 @@
+class ChangeColumn < ActiveRecord::Migration
+  def up
+		remove_column :users, :type
+  end
+
+  def down
+		create_column
+  end
+end

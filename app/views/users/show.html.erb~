@@ -27,7 +27,7 @@
 
 <p>
   <b>Type:</b>
-  <%= @user.user_type %>
+  <%= @user.type %>
 </p>
 
 

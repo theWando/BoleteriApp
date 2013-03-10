@@ -37,9 +37,8 @@
   </div>
   <div class="field">
     <%= f.label 'Tipo de Usuario' %><br />
-    <%= f.select :type, @type %>
+    <%= f.select :user_type, @type %>
   </div>
-  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
