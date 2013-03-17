@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
+			format.xml { render xml: @user }
     end
   end
 

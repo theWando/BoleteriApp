@@ -3,7 +3,7 @@ module UsersHelper
 		if !User.where(:user_type => "admin").exists?
 			@type = @type = ["admin"]
 		else
-			@type = ["employee","passanger"]
+			@type = ["empleado","pasajero"]
 		end
 	end
 end

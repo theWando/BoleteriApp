@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Destination city:</b>
+  <%= @travel.destination_city %>
+</p>
+
+<p>
+  <b>Destination country:</b>
+  <%= @travel.destination_country %>
+</p>
+
+<p>
+  <b>N days:</b>
+  <%= @travel.n_days %>
+</p>
+
+<p>
+  <b>N nights:</b>
+  <%= @travel.n_nights %>
+</p>
+
+<p>
+  <b>Extract:</b>
+  <%= @travel.extract %>
+</p>
+
+<p>
+  <b>Detail:</b>
+  <%= @travel.detail %>
+</p>
+
+
+<%= link_to 'Edit', edit_travel_path(@travel) %> |
+<%= link_to 'Back', travels_path %>

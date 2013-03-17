@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  destination_city: MyString
+  destination_country: MyString
+  n_days: 1
+  n_nights: 1
+  extract: MyText
+  detail: MyText
+
+two:
+  destination_city: MyString
+  destination_country: MyString
+  n_days: 1
+  n_nights: 1
+  extract: MyText
+  detail: MyText

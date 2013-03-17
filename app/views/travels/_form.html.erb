@@ -1,0 +1,41 @@
+<%= form_for(@travel) do |f| %>
+  <% if @travel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@travel.errors.count, "error") %> No se puede guardar este <b>viaje</b> porque:</h2>
+
+      <ul>
+      <% @travel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :destination_city %><br />
+    <%= f.text_field :destination_city %>
+  </div>
+  <div class="field">
+    <%= f.label :destination_country %><br />
+    <%= f.text_field :destination_country %>
+  </div>
+  <div class="field">
+    <%= f.label :n_days %><br />
+    <%= f.number_field :n_days %>
+  </div>
+  <div class="field">
+    <%= f.label :n_nights %><br />
+    <%= f.number_field :n_nights %>
+  </div>
+  <div class="field">
+    <%= f.label :extract %><br />
+    <%= f.text_area :extract %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br />
+    <%= f.text_area :detail %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
