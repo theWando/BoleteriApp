@@ -64,14 +64,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Crear Usuario", new_user_path %></li>
-              <li><%= link_to "Crear Viaje", new_travel_path %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+          <%= render "admin_panel" %>
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>

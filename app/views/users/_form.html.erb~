@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'Nombre' %><br />
+    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label 'Apellido' %><br />
+    <%= f.label :lastname %><br />
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label 'Correo Electronico' %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label 'Contraseña' %><br />
+    <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label 'Confirmar Contraseña' %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
-    <%= f.label 'Fecha de Nacimiento' %><br />
+    <%= f.label :birth_date %><br />
     <%= f.date_select :birth_date, {:start_year => Time.now.year, :end_year => Time.now.year-110, :prompt => true, :order => [:day, :month, :year], :default => Time.now} %>
   </div>
   <div class="field">
     <%= f.label 'Tipo de Usuario' %><br />
-    <%= f.select :user_type, @type %>
+    <%= f.select :user_type, is_ther_any_admin %>
   </div>
   <div class="actions">
     <%= f.submit %>
