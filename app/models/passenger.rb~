@@ -1,9 +1,0 @@
-class Passenger < ActiveRecord::Base
-  attr_accessible :document, :document_type
-
-	belong_to :user
-	has_many :contact_form
-
-	validates :document,			:precense => true
-	validates	:document_type, :precense => true
-end
