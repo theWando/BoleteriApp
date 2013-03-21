@@ -47,8 +47,8 @@
           <a class="brand" href="/">BoleteriApp</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Inicio", "/"  %></li>
               <li><%= link_to "Viajes", travels_path  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
           </div><!--/.nav-collapse -->

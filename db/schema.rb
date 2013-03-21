@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317155558) do
+ActiveRecord::Schema.define(:version => 20130321183437) do
 
   create_table "contact_forms", :force => true do |t|
     t.string   "type"
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(:version => 20130317155558) do
     t.integer  "n_nights"
     t.text     "extract"
     t.text     "detail"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.integer  "number_of_seats_aviables"
   end
 
   create_table "users", :force => true do |t|
