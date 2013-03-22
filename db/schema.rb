@@ -28,16 +28,6 @@ ActiveRecord::Schema.define(:version => 20130317155558) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "scaffolds", :force => true do |t|
-    t.string   "Vehicle"
-    t.string   "type"
-    t.string   "name"
-    t.string   "serial_code"
-    t.integer  "seats"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "tickets", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

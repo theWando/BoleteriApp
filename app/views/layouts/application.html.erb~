@@ -66,6 +66,8 @@
           <%= render "admin_panel" %>
         </div><!--/span-->
         <div class="span9">
+          <%= bootstrap_flash %>
+          
           <%= yield %>
         </div>
       </div><!--/row-->
