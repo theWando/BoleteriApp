@@ -1,0 +1,2 @@
+class AdminTasksController < ApplicationController
+end

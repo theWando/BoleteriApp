@@ -1,4 +1,7 @@
 BoleteriApp::Application.routes.draw do
+  resources :hotels
+
+
   resources :travels
 
 
