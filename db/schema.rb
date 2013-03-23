@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(:version => 20130322141001) do
     t.integer  "n_nights"
     t.text     "extract"
     t.text     "detail"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.integer  "number_of_seats_aviables"
   end
 
   create_table "users", :force => true do |t|
