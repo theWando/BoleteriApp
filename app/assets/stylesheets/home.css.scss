@@ -40,7 +40,6 @@ body > .navbar .brand {
   margin-left: 20px;
   float: right;
   font-weight: bold;
-  color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
@@ -48,7 +47,7 @@ body > .navbar .brand {
 }
 body > .navbar .brand:hover {
   text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+ // text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
 
 
@@ -177,7 +176,7 @@ hr.soften {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(../img/bs-docs-masthead-pattern.png) repeat center center;
+  background: url(../images/bs-docs-masthead-pattern.png) repeat center center;
   opacity: .4;
 }
 @media

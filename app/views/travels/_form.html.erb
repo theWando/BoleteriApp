@@ -1,6 +1,7 @@
 <%= form_for(@travel) do |f| %>
   <% if @travel.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-block alert-error fade in">
+      <button type="button" class="close" data-dismiss="alert">×</button>
       <h2><%= pluralize(@travel.errors.count, "error") %> No se puede guardar este <b>viaje</b> porque:</h2>
 
       <ul>

@@ -40,18 +40,18 @@ es:
       short: ! '%d de %b'
     month_names:
     - 
-    - enero
-    - febrero
-    - marzo
-    - abril
-    - mayo
-    - junio
-    - julio
-    - agosto
-    - septiembre
-    - octubre
-    - noviembre
-    - diciembre
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
     order:
     - :day
     - :month
@@ -208,6 +208,7 @@ es:
     models:
       travel: "Viaje"
       user:   "Usuario" 
+      hotel:  "Hotel"
     attributes:
       travel:
           destination_city:         "Ciudad Destino"
@@ -225,3 +226,10 @@ es:
           password_confirmation:    "Confirmación de contraseña"
           birth_date:               "Fecha de nacimiento"
           user_type:                "Tipo de usuario"
+      hotel:
+          city:                     "Ciudad"
+          country:                  "País"
+          name:                     "Nombre"
+          number_of_rooms_doubles:  "Número de habitaciones dobles"
+          number_of_rooms_married:  "Número de habitaciones matrimoniales"
+          number_of_rooms_single:   "Número de habitaciones sencillas"
