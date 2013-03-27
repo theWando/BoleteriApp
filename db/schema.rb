@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130322141001) do
     t.text     "detail"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.integer  "number_of_seats_aviables
   end
 
   create_table "users", :force => true do |t|
