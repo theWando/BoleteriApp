@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  country: MyString
+  city: MyString
+  number_of_rooms_single: 1
+  number_of_rooms_doubles: 1
+  number_of_rooms_married: 1
+
+two:
+  name: MyString
+  country: MyString
+  city: MyString
+  number_of_rooms_single: 1
+  number_of_rooms_doubles: 1
+  number_of_rooms_married: 1

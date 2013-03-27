@@ -21,11 +21,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'therubyracer'
-gem 'execjs'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails', '~> 2.2.6'
+gem 'rails-i18n'
+gem 'bootstrap-sass'
 gem 'devise'
+gem 'rails_admin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,10 +1,13 @@
 BoleteriApp::Application.routes.draw do
+  resources :hotels
+
+
   resources :travels
 
 
   get "home/index"
 
-  resources :users
+  devise_for :users
 
 
   # The priority is based upon order of creation:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321183437) do
+ActiveRecord::Schema.define(:version => 20130322141001) do
 
   create_table "contact_forms", :force => true do |t|
     t.string   "type"
@@ -21,21 +21,22 @@ ActiveRecord::Schema.define(:version => 20130321183437) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "country"
+    t.string   "city"
+    t.integer  "number_of_rooms_single"
+    t.integer  "number_of_rooms_doubles"
+    t.integer  "number_of_rooms_married"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
   create_table "passengers", :force => true do |t|
     t.string   "document_type"
     t.string   "document"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "scaffolds", :force => true do |t|
-    t.string   "Vehicle"
-    t.string   "type"
-    t.string   "name"
-    t.string   "serial_code"
-    t.integer  "seats"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "tickets", :force => true do |t|
@@ -50,9 +51,8 @@ ActiveRecord::Schema.define(:version => 20130321183437) do
     t.integer  "n_nights"
     t.text     "extract"
     t.text     "detail"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.integer  "number_of_seats_aviables"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "users", :force => true do |t|
