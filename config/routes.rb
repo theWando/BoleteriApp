@@ -7,7 +7,7 @@ BoleteriApp::Application.routes.draw do
 
   get "home/index"
 
-  resources :users
+  devise_for :users
 
 
   # The priority is based upon order of creation:

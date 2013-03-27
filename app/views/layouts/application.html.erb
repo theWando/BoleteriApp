@@ -66,6 +66,15 @@
           <%= render "admin_panel" %>
         </div><!--/span-->
         <div class="span9">
+		<% if params.has_key?(:notice) %>
+		<div id="alert alert-error"><%= notice %><div>
+		<% end %>
+		<% if params.has_key?(:alert) %>
+		<div class="alert alert-block">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <%= alert %>
+		</div>
+		<% end %>
           <%= yield %>
         </div>
       </div><!--/row-->
