@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t '.name'%>:</b>
   <%= @hotel.name %>
 </p>
 
 <p>
-  <b>Country:</b>
+  <b><%= t '.country'%>:</b>
   <%= @hotel.country %>
 </p>
 
 <p>
-  <b>City:</b>
+  <b><%= t '.city'%>:</b>
   <%= @hotel.city %>
 </p>
 
 <p>
-  <b>Number of rooms single:</b>
+  <b><%= t '.number_of_rooms_single'%>:</b>
   <%= @hotel.number_of_rooms_single %>
 </p>
 
 <p>
-  <b>Number of rooms doubles:</b>
+  <b><%= t '.number_of_rooms_doubles' %>:</b>
   <%= @hotel.number_of_rooms_doubles %>
 </p>
 
 <p>
-  <b>Number of rooms married:</b>
+  <b><%= t '.number_of_rooms_married'%>:</b>
   <%= @hotel.number_of_rooms_married %>
+</p>
+<p>
+	<b><%= t '.assets'%>:</b>
+	<%= join_assets(@hotel)%>
 </p>
 
 

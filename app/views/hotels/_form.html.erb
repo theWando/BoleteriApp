@@ -1,3 +1,4 @@
+<% @hotel.assets.build %>
 <%= form_for(@hotel) do |f| %>
   <% if @hotel.errors.any? %>
     <div class="alert alert-block alert-error fade in">
@@ -36,6 +37,7 @@
     <%= f.label :number_of_rooms_married %><br />
     <%= f.number_field :number_of_rooms_married %>
   </div>
+  <%= render :partial => 'assets/form', :locals => { :form => f }%>
   <div class="actions">
     <%= f.submit %>
   </div>

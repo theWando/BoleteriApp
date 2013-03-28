@@ -1,5 +1,6 @@
 BoleteriApp::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_names => { :sign_up => "registro", :sign_in => "entrar",
+                                      :sign_out => "salir"}
 
   resources :hotels
 

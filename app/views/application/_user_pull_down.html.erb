@@ -1,0 +1,31 @@
+		  <% if user_signed_in? %>
+          <ul class="nav pull-right">
+          	<li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name + ' ' + current_user.lastname %>  <b class="caret"></b></a>
+			    <ul class="dropdown-menu">
+			    	<li>
+			    		<a>Ver compras</a>
+			    	</li>
+			    	<li>
+			    		<a>Perfíl</a>
+			    	</li>
+			    	<li class="divider"></li>
+			    	<li>
+					    <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+			    	</li>
+			    </ul>
+			</li>
+          </ul>
+		  <% else %>
+		  <div class="navbar-responsive-collapse">
+		  	<ul class="nav">
+		  		<li>
+			    	<%= link_to "Regístrate", new_user_registration_path %>
+		  		</li>
+		  		<li>
+				    <%= link_to "Entra", new_user_session_path %>
+		  		</li>
+		  		<li class="divider-vertical"></li>
+		  	</ul>
+		  </div>
+		  <% end %>
