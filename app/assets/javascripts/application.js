@@ -12,9 +12,8 @@
 //
 // Loads all Bootstrap javascripts
 //= require jquery
-//= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-scrollspy
-//= require bootstrap-modal
+//= require bootstrap-alert
+//= require bootstrap-popover
 //= require bootstrap-dropdown
 //= require_tree .

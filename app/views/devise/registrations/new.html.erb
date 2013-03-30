@@ -28,10 +28,25 @@
     <%= f.label :birth_date %><br />
     <%= f.date_select :birth_date, {:start_year => Time.now.year, :end_year => Time.now.year-110, :prompt => true, :order => [:day, :month, :year], :default => Time.now} %>
   </div>
+  <% if user_signed_in? %>
   <div class="field">
-    <%= f.label :user_type %><br />
-    <%= f.select :user_type, is_ther_any_admin %>
+    <% if current_user.user_type == "empleado" %>
+      <%= f.label :user_type %>
+      <%= f.select :user_type, ["empleado","pasajero"] %>
+    <% elsif current_user.user_type == "admin" %>
+      <%= f.label :user_type %>
+      <%= f.select :user_type, ["admin","empleado","pasajero"] %>
+    <% else %>
+      <%= f.hidden_field :user_type, :value => "pasajero" %>
+    <% end %>
   </div>
+  <% else %>
+    <% if is_ther_any_admin %>
+      <%= f.hidden_field :user_type, :value => "pasajero"%>
+    <% else %>
+      <%= f.hidden_field :user_type, :value => "admin"%>
+    <% end %>
+  <% end %>
   <div><%= f.submit "Crear" %></div>
 <% end %>
 

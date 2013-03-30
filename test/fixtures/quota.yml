@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hotel: 
+  travel: 
+  aviable_tickets: 1
+
+two:
+  hotel: 
+  travel: 
+  aviable_tickets: 1

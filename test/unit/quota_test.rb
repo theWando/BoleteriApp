@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ScaffoldTest < ActiveSupport::TestCase
+class QuotaTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

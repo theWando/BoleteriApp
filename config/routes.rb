@@ -4,7 +4,9 @@ BoleteriApp::Application.routes.draw do
 
   resources :hotels
 
-  resources :travels
+  resources :travels do
+    resources :hotels
+  end
 
   get "home/index"
 

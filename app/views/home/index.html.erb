@@ -1,8 +1,20 @@
 <h1>Bienvenido</h1>
 <p>Disfruta de nuestros paquetes y ofertas...</p>
 <div class="row-fluid">
-<% @travels.each do |travel| %>
+<% if user_signed_in? and current_user.admin? and @travels.nil?%>
+  <div class="alert alert-block">
+  <h4>No existe ningún viaje...</h4>
+    <p>
+      Por favor, crea un hotel y luego un viaje.
+    </p>
+    <p>
+      <%= link_to "Crear hotel", new_hotel_path, html_options = {:class => "btn btn-primary"} %> <%= link_to "Crear viaje", new_travel_path, html_options = {:class => "btn btn-primary"} %>
+    </p>
+  </div>
+<% end %>
+<% if !@travels.nil?%>  
 <ul class="thumbnails">
+<% @travels.each do |travel| %>
   <li class="span4">
     <div class="thumbnail">
       <img data-src="holder.js/300x200" alt="300x200" style="width: 300px; height: 200px;" src="images/300x200.png">
@@ -16,4 +28,5 @@
   </li>
 <% end %>
 </ul>
+<% end %>
 </div>

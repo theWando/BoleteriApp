@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+  has_many :tickets
 
   attr_accessible :birth_date, :email, :lastname, :name, :password, :user_type, :password_confirmation, :remember_me
 
@@ -14,4 +16,8 @@ class User < ActiveRecord::Base
   validates :email, 		:presence => true, :uniqueness => true, :format => EMAIL_REGEX
   validates :password,	:length => { :minimum => 5, :maximum => 40 },
 												:confirmation => true #password_confirmation attr
+												
+	def admin?
+	  user_type == "admin"
+	end
 end

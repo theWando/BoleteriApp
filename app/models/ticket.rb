@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
-  # attr_accessible :title, :body
-	belongs_to :employee
+  belongs_to :user
+  belongs_to :quota
+  attr_accessible :amount_paid, :bought_on, :paid_with, :status
 end

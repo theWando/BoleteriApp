@@ -25,7 +25,6 @@ class TravelsController < ApplicationController
   # GET /travels/new.json
   def new
     @travel = Travel.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @travel }
@@ -41,7 +40,6 @@ class TravelsController < ApplicationController
   # POST /travels.json
   def create
     @travel = Travel.new(params[:travel])
-
     respond_to do |format|
       if @travel.save
         format.html { redirect_to @travel, notice: 'Travel was successfully created.' }
