@@ -6,7 +6,9 @@ BoleteriApp::Application.routes.draw do
   resources :hotels
 
   resources :travels do
-    resources :hotels
+    resources :quotas do
+      resources :hotels
+    end
   end
   
   match "/travels/compra/:id" => "travels#compra"

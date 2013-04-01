@@ -1,3 +1,12 @@
 <h2>¿Interesado en comprar un pasaje a <%= @travel.destination_city %>, <%= @travel.destination_country %>?</h2>
 <h4>Precio: <%= number_to_currency(@travel.price) %> por persona</h4>
+<% hotel = @travel.hotel %>
+<p>Estarás alojado en el lujoso hotel <%= hotel.name %>, en <%= @travel.destination_country %> <%= @travel.destination_city %>.</p>
+<p><%= @travel.detail %></p>
+<p>Actualmente solo están disponibles <%= @travel.quota.aviable_tickets %> cupos.</p>
+<%= form_tag "/travels/comprado" do %>
+  <%= hidden_field ":id", @travel.id%>
+  <%= number_field_tag  "tickets_amount", :min => 1, :max => @travel.quota.aviable_tickets %>
+  <%= submit_tag "Comprar" %>
+<% end %>
 
