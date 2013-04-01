@@ -1,6 +1,6 @@
 class CreateTickets < ActiveRecord::Migration
   def change
-    drop_table :tickets
+    drop_table :tickets if self.table_exists?("tickets")
     create_table :tickets do |t|
       t.timestamp :bought_on
       t.string :status

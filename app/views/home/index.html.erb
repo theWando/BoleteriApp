@@ -1,7 +1,7 @@
 <h1>Bienvenido</h1>
 <p>Disfruta de nuestros paquetes y ofertas...</p>
 <div class="row-fluid">
-<% if user_signed_in? and current_user.admin? and @travels.nil?%>
+<% if user_signed_in? and current_user.admin? and @travels.empty?%>
   <div class="alert alert-block">
   <h4>No existe ningún viaje...</h4>
     <p>
@@ -12,7 +12,7 @@
     </p>
   </div>
 <% end %>
-<% if !@travels.nil?%>  
+<% if !@travels.empty?%>  
 <%= render 'travel_panel'%>
 <% end %>
 </div>

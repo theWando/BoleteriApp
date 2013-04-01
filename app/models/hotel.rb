@@ -4,6 +4,7 @@ class Hotel < ActiveRecord::Base
                   
   has_many :assets
   has_many :travel
+  has_many :quotas
   
   accepts_nested_attributes_for :assets, :allow_destroy => :true,
         :reject_if => proc { |assets| assets.all? { |k, v| v.blank? }}

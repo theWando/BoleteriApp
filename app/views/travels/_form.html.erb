@@ -44,6 +44,10 @@
     <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
+  <div class="field">
+  	<%= f.label :hotel_id %>
+  	<%= select("travel","hotel_id", list_all_hotels) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -40,8 +40,14 @@ class TravelsController < ApplicationController
   # POST /travels.json
   def create
     @travel = Travel.new(params[:travel])
+	@hotel = Hotel.find(@travel.hotel_id)
+	@quota = Quota.new
+	@quota.hotel= @hotel
+	@quota.travel= @travel
+	@quota.aviable_tickets= @travel.number_of_seats_aviables
     respond_to do |format|
       if @travel.save
+		@quota.save
         format.html { redirect_to @travel, notice: 'Travel was successfully created.' }
         format.json { render json: @travel, status: :created, location: @travel }
       else
