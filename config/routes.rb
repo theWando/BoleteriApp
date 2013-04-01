@@ -1,4 +1,5 @@
 BoleteriApp::Application.routes.draw do
+
   devise_for :users, :path_names => { :sign_up => "registro", :sign_in => "entrar",
                                       :sign_out => "salir"}
 
@@ -7,8 +8,9 @@ BoleteriApp::Application.routes.draw do
   resources :travels do
     resources :hotels
   end
+  
+  match "/travels/compra/:id" => "travels#compra"
 
-  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

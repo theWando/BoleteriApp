@@ -78,4 +78,15 @@ class TravelsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  #DELETE /travels/compra/1
+  #DELETE /travels/compra/1.json
+  def compra
+    @travel = Travel.find(params[:id])
+
+    respond_to do |format|
+      format.html # compra.html.erb
+      format.json { render json: @travel }
+    end
+  end
 end

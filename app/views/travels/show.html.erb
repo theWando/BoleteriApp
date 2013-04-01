@@ -1,33 +1,36 @@
 <p>
-  <b>Destination city:</b>
+  <b><%= t 'activerecord.attributes.travel.destination_city' %>:</b>
   <%= @travel.destination_city %>
 </p>
 
 <p>
-  <b>Destination country:</b>
+  <b><%= t 'activerecord.attributes.travel.destination_country' %>:</b>
   <%= @travel.destination_country %>
 </p>
-
 <p>
-  <b>N days:</b>
+  <b><%= t 'activerecord.attributes.travel.price' %>:</b>
+  <%= number_to_currency(@travel.price) %>
+</p>
+<p>
+  <b><%= t 'activerecord.attributes.travel.n_days' %>:</b>
   <%= @travel.n_days %>
 </p>
 
 <p>
-  <b>N nights:</b>
+  <b><%= t 'activerecord.attributes.travel.n_nights' %>:</b>
   <%= @travel.n_nights %>
 </p>
 
 <p>
-  <b>Extract:</b>
+  <b><%= t 'activerecord.attributes.travel.extract' %>:</b>
   <%= @travel.extract %>
 </p>
 
 <p>
-  <b>Detail:</b>
+  <b><%= t 'activerecord.attributes.travel.detail' %>:</b>
   <%= @travel.detail %>
 </p>
 
-
-<%= link_to 'Edit', edit_travel_path(@travel) %> |
-<%= link_to 'Back', travels_path %>
+<%= link_to 'Comprar', { :controller => 'travels', :action => 'compra', :id => @travel.id }, html_options = {:class => "btn btn-success"} %> 
+<%= link_to 'Editar', edit_travel_path(@travel), html_options = { :class => "btn" } %> 
+<%= link_to 'Atrás', travels_path, html_options = { :class => "btn" } %>

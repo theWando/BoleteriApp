@@ -1,13 +1,23 @@
 <ul class="thumbnails">
+<% @travels.each do |travel| %>
   <li class="span4">
     <div class="thumbnail">
       <img data-src="holder.js/300x200" alt="300x200" style="width: 300px; height: 200px;" src="images/300x200.png">
       <div class="caption">
-        <h3><%= @travel.destination_city %></h3>
-        <h5><%= @travel.destination_country%></h5>
-          <p><%= @travel.extract %></p>
-          <p><%= link_to "ver mas..", @travel %></p>
+        <h3><%= travel.destination_city %></h3>
+        <h5><%= travel.destination_country%></h5>
+        <h6>por tan solo <%= number_to_currency(travel.price , :locale => :es) %></h6>
+          <p><%= travel.extract %></p>
+          <p><%= link_to "ver mas..", travel, html_options = {:class => "btn"} %> 
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+           <%= link_to "editar", edit_travel_path(travel), html_options = { :class => "btn btn-warning"} %>
+            <% end %>
+           <%= link_to "comprar", { :controller => 'travels', :action => 'compra', :id => travel.id }, html_options = {:class => "btn btn-success"}%>
+          <% end %>
+          </p>
       </div>
     </div>
   </li>
+<% end %>
 </ul>

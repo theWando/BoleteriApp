@@ -13,32 +13,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :destination_city %><br />
+    <%= f.label :destination_city %>
     <%= f.text_field :destination_city %>
   </div>
   <div class="field">
-    <%= f.label :destination_country %><br />
+    <%= f.label :destination_country %>
     <%= f.text_field :destination_country %>
   </div>
   <div class="field">
-    <%= f.label :n_days %><br />
+    <%= f.label :n_days %>
     <%= f.number_field :n_days %>
   </div>
   <div class="field">
-    <%= f.label :n_nights %><br />
+    <%= f.label :n_nights %>
     <%= f.number_field :n_nights %>
   </div>
   <div class="field">
-    <%= f.label :extract %><br />
+    <%= f.label :extract %>
     <%= f.text_area :extract %>
   </div>
   <div class="field">
-    <%= f.label :detail %><br />
+    <%= f.label :detail %>
     <%= f.text_area :detail %>
   </div>
   <div class="field">
-    <%= f.label :number_of_seats_aviables %><br />
+    <%= f.label :number_of_seats_aviables %>
     <%= f.number_field :number_of_seats_aviables %>
+  </div>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
   </div>
   <div class="actions">
     <%= f.submit %>

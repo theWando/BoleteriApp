@@ -145,7 +145,7 @@ es:
         separator: ! ','
         significant: false
         strip_insignificant_zeros: false
-        unit: €
+        unit: Bs 
     format:
       delimiter: .
       precision: 3
@@ -218,7 +218,8 @@ es:
           extract:                  "Extracto"
           n_days:                   "Número de dias"
           n_nights:                 "Número de noches"
-          number_of_seats_aviables:  "Número de puestos disponibles"
+          number_of_seats_aviables: "Número de puestos disponibles"
+          price:                    "Precio" 
       user:
           name:                     "Nombre"
           lastname:                 "Apellido"

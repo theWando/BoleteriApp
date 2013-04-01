@@ -13,20 +13,6 @@
   </div>
 <% end %>
 <% if !@travels.nil?%>  
-<ul class="thumbnails">
-<% @travels.each do |travel| %>
-  <li class="span4">
-    <div class="thumbnail">
-      <img data-src="holder.js/300x200" alt="300x200" style="width: 300px; height: 200px;" src="images/300x200.png">
-      <div class="caption">
-        <h3><%= travel.destination_city %></h3>
-        <h5><%= travel.destination_country%></h5>
-          <p><%= travel.extract %></p>
-          <p><%= link_to "ver mas..", travel, html_options = {:class => "btn"} %></p>
-      </div>
-    </div>
-  </li>
-<% end %>
-</ul>
+<%= render 'travel_panel'%>
 <% end %>
 </div>
