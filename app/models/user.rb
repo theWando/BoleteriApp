@@ -20,4 +20,16 @@ class User < ActiveRecord::Base
 	def admin?
 	  user_type == "admin"
 	end
+	
+	def passenger?
+	  user_type == "pasajero"
+	end
+	
+	def employee?
+	  user_type == "empleado"
+	end
+	
+	def staff?
+	  admin? or employee?
+	end
 end

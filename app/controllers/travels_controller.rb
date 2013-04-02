@@ -62,7 +62,7 @@ class TravelsController < ApplicationController
   def update
     @travel = Travel.find(params[:id])
     if @travel.quota.nil?
-      @hotel = Hotel.find(@travel.hotel_id)
+      @hotel = Hotel.find(params[:travel][:hotel_id])
       @quota = Quota.new
       @quota.hotel= @hotel
       @quota.travel= @travel

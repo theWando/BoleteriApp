@@ -1,12 +1,30 @@
 <h2>¿Interesado en comprar un pasaje a <%= @travel.destination_city %>, <%= @travel.destination_country %>?</h2>
 <h4>Precio: <%= number_to_currency(@travel.price) %> por persona</h4>
-<% hotel = @travel.hotel %>
-<p>Estarás alojado en el lujoso hotel <%= hotel.name %>, en <%= @travel.destination_country %> <%= @travel.destination_city %>.</p>
-<p><%= @travel.detail %></p>
-<p>Actualmente solo están disponibles <%= @travel.quota.aviable_tickets %> cupos.</p>
-<%= form_tag "/travels/comprado" do %>
-  <%= hidden_field ":id", @travel.id%>
-  <%= number_field_tag  "tickets_amount", :min => 1, :max => @travel.quota.aviable_tickets %>
-  <%= submit_tag "Comprar" %>
+<% unless @travel.hotel.nil? %>
+    <% hotel = @travel.hotel %>
+    <p>Estarás alojado en el lujoso hotel <%= hotel.name %>, en <%= @travel.destination_country %> <%= @travel.destination_city %>.</p>
+    <p><%= @travel.detail %></p>
+    <p>Actualmente solo están disponibles <%= @travel.quota.aviable_tickets %> cupos.</p>
+    <%= form_tag "/travels/comprado" do %>
+      <%= hidden_field ":id", @travel.id%>
+      <%= number_field_tag  "tickets_amount", :min => 1, :max => @travel.quota.aviable_tickets %>
+      <%= submit_tag "Comprar" %>
+    <% end %>
+<% else %>
+  <% if user_signed_in? %>
+    <% if current_user.staff? %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Oh!</strong> Este viaje no tiene asignado un hotel, y tus clientes necesita alojarse en algún sitio, 
+        por favor agrega un hotel <%= link_to "Editar Viaje", edit_travel_path(@travel) %>.
+      </div>
+    <% else %>
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Upssss!</strong> Algo malo ha pasado y estamos trabajando para resolverlo.
+      </div>
+    <% end %>
+  <% else !user_signed_in? %>
+    <%= render "public/422.html"%>
+  <% end %>  
 <% end %>
-
