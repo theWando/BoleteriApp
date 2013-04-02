@@ -7,6 +7,9 @@
         <h3><%= travel.destination_city %></h3>
         <h5><%= travel.destination_country%></h5>
         <h6>por tan solo <%= number_to_currency(travel.price , :locale => :es) %></h6>
+        <% unless travel.due_date.nil? %>
+        <h6>sale en <%= distance_of_time_in_words_to_now(travel.due_date ) %></h6>
+        <% end %>
           <p><%= travel.extract %></p>
           <p><%= link_to "ver mas..", travel, html_options = {:class => "btn"} %> 
           <% if user_signed_in? %>

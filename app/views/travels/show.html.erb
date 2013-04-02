@@ -8,6 +8,10 @@
   <%= @travel.destination_country %>
 </p>
 <p>
+  <b>Sale el:</b>
+  <%=  l @travel.due_date, :format => :long %>
+</p>
+<p>
   <b><%= t 'activerecord.attributes.travel.price' %>:</b>
   <%= number_to_currency(@travel.price) %>
 </p>

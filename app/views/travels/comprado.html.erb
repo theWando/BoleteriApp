@@ -1,2 +1,3 @@
-<h1>Travels#comprado</h1>
-<p>Find me in app/views/travels/comprado.html.erb</p>
+<h1>Pasajes reservados</h1>
+<p>Has comprado <%= @ticket.times%> pasajes, por el monto de <%= number_to_currency(@ticket.amount_paid) %></p>
+<p>Debes pagarlo hasta 5 dias antes del viaje</p>

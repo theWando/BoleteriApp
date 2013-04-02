@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401183131) do
+ActiveRecord::Schema.define(:version => 20130402135248) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130401183131) do
     t.integer  "user_id"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "times"
   end
 
   add_index "tickets", ["user_id"], :name => "index_tickets_on_user_id"
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20130401183131) do
     t.integer  "number_of_seats_aviables"
     t.decimal  "price"
     t.integer  "hotel_id"
+    t.datetime "due_date"
   end
 
   create_table "users", :force => true do |t|

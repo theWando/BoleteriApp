@@ -1,5 +1,5 @@
 class Travel < ActiveRecord::Base
-  attr_accessible :destination_city, :destination_country, :detail, :extract, :n_days, :n_nights, :number_of_seats_aviables, :price, :quota_attributes, :hotel_id
+  attr_accessible :destination_city, :destination_country, :detail, :extract, :n_days, :n_nights, :number_of_seats_aviables, :price, :quota_attributes, :hotel_id, :due_date
 
 	validates :destination_city, :destination_country, :detail, :extract, :n_days, :n_nights, :number_of_seats_aviables,	:presence => true
 	validates :destination_country,	:length	=> {:minimum => 4, :maximum => 59} #de acuerdo a los paises con los combres mas cortos y nombres mas largos

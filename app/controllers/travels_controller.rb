@@ -120,13 +120,14 @@ class TravelsController < ApplicationController
     quota.minus amount
     quota.save
     
-    t = Ticket.new
-    t.amount_paid= @travel.price * amount
-    t.bought_on = Time.new
-    t.reservar
-    t.quota= quota
-    t.user= current_user if user_signed_in?
-    t.save
+    @ticket = Ticket.new
+    @ticket.amount_paid= @travel.price * amount
+    @ticket.bought_on = Time.new
+    @ticket.reservar
+    @ticket.times= amount
+    @ticket.quota= quota
+    @ticket.user= current_user if user_signed_in?
+    @ticket.save
     @travel.save
     
     respond_to do |format|

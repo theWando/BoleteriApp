@@ -8,7 +8,7 @@
     <%= form_tag "/travels/comprado" do %>
       <%= hidden_field_tag "id", @travel.id%>
       <%= number_field_tag  "tickets_amount", :min => 1, :max => @travel.quota.aviable_tickets %>
-      <%= submit_tag "Comprar" %>
+      <%= submit_tag "Reservar" %>
     <% end %>
 <% else %>
   <% if user_signed_in? %>
