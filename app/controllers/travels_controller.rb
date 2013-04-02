@@ -47,7 +47,7 @@ class TravelsController < ApplicationController
 	@quota.aviable_tickets= @travel.number_of_seats_aviables
     respond_to do |format|
       if @travel.save
-		@quota.save
+        @quota.save
         format.html { redirect_to @travel, notice: 'Travel was successfully created.' }
         format.json { render json: @travel, status: :created, location: @travel }
       else
@@ -61,6 +61,22 @@ class TravelsController < ApplicationController
   # PUT /travels/1.json
   def update
     @travel = Travel.find(params[:id])
+    if @travel.quota.nil?
+      @hotel = Hotel.find(@travel.hotel_id)
+      @quota = Quota.new
+      @quota.hotel= @hotel
+      @quota.travel= @travel
+      @quota.aviable_tickets= @travel.number_of_seats_aviables
+       @quota.save
+    else
+      @quota = @travel.quota
+      h = @quota.hotel
+      if h.nil?
+        @hotel = Hotel.find(@travel.hotel_id)
+        @quota.hotel= @hotel
+        @quota.save
+      end
+    end
 
     respond_to do |format|
       if @travel.update_attributes(params[:travel])
