@@ -67,7 +67,7 @@ class TravelsController < ApplicationController
       @quota.hotel= @hotel
       @quota.travel= @travel
       @quota.aviable_tickets= @travel.number_of_seats_aviables
-       @quota.save
+      @quota.save
     else
       @quota = @travel.quota
       h = @quota.hotel
@@ -108,6 +108,29 @@ class TravelsController < ApplicationController
 
     respond_to do |format|
       format.html # compra.html.erb
+      format.json { render json: @travel }
+    end
+  end
+  
+  def comprado
+    @travel = Travel.find(params[:id])
+    amount = params[:tickets_amount].to_i
+    @travel.minus amount
+    quota = @travel.quota
+    quota.minus amount
+    quota.save
+    
+    t = Ticket.new
+    t.amount_paid= @travel.price * amount
+    t.bought_on = Time.new
+    t.reservar
+    t.quota= quota
+    t.user= current_user if user_signed_in?
+    t.save
+    @travel.save
+    
+    respond_to do |format|
+      format.html # comprado.html.erb
       format.json { render json: @travel }
     end
   end

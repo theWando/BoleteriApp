@@ -1,5 +1,7 @@
 BoleteriApp::Application.routes.draw do
 
+  #get "travels/comprado"
+
   devise_for :users, :path_names => { :sign_up => "registro", :sign_in => "entrar",
                                       :sign_out => "salir"}
 
@@ -12,6 +14,7 @@ BoleteriApp::Application.routes.draw do
   end
   
   match "/travels/compra/:id" => "travels#compra"
+  match "travels/comprado" => "travels#comprado"
 
 
   # The priority is based upon order of creation:

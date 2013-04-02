@@ -12,4 +12,8 @@ class Travel < ActiveRecord::Base
 	has_one :hotel, :through => :quota
   
   accepts_nested_attributes_for :quota, :allow_destroy => :true
+  
+  def minus (amount)
+    self.number_of_seats_aviables = number_of_seats_aviables - amount
+  end
 end

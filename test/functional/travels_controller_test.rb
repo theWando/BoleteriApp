@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TravelsControllerTest < ActionController::TestCase
-  test "should get compra" do
-    get :compra
+  test "should get comprado" do
+    get :comprado
     assert_response :success
   end
 
